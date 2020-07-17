@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	<body>
+	<script>
+		let marks = Number(prompt("Enter your marks between 0-100"));
+
+if (marks < 50) {
+  console.log(`Marks are '${marks}' and grade is 'F'`);
+} else if (marks >= 50 && marks <= 59) {
+  console.log(`Marks are '${marks}' and grade is 'E'`);
+} else if (marks >= 60 && marks <= 69) {
+  console.log(`Marks are '${marks}' and grade is 'D'`);
+} else if (marks >= 70 && marks <= 79) {
+  console.log(`Marks are '${marks}' and grade is 'C'`);
+} else if (marks >= 80 && marks <= 89) {
+  console.log(`Marks are '${marks}' and grade is 'B'`);
+} else if (marks >= 90 && marks <= 100) {
+  console.log(`Marks are '${marks}' and grade is 'A'`);
+} else {
+  console.log(`Marks are '${marks}' and pls type between 0-100`);
+}
+
+	
+		switch (true) {
+  case (marks < 50):
+    console.log(`Marks are '${marks}' and grade is 'F'`);
+    break;
+  case (marks >= 50 && marks <= 59):
+    console.log(`Marks are '${marks}' and grade is 'E'`);
+    break;
+  case (marks >= 60 && marks <= 69):
+    console.log(`Marks are '${marks}' and grade is 'D'`);
+    break;
+  case (marks >= 70 && marks <= 79):
+    console.log(`Marks are '${marks}' and grade is 'C'`);
+    break;
+  case (marks >= 80 && marks <= 89):
+    console.log(`Marks are '${marks}' and grade is 'B'`);
+    break;
+  case (marks >= 90 && marks <= 100):
+    console.log(`Marks are '${marks}' and grade is 'A'`);
+    break;
+  default:
+    console.log(`Marks are '${marks}' and pls type between 0-100`);
+    break;
+}
+
+
+	</script>
+</body>
+	</html>
