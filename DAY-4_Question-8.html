@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	<body>
+	<script>
+		ask=(quesstion,yes,no)=>{
+			if (confirm(question)) yes();
+			else no();
+		};
+		  ask(
+		  	"Do you agree?",
+		  function(){
+		  	alert("You agreed.");
+
+		  },
+		 function(){
+		 	alert("You cancelled the execution.");
+		 }	
+		);
+	</script>
+</body>
+</html>
