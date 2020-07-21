@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	
+
+	<body>
+	<script >
+     class User {
+			constructor(name,age,email){
+
+
+			this.name=name;
+			this.age=age;
+			this.email=email;
+			this.courses=[];
+
+		
+}
+         login(){
+         	console.log(`${this.name} has logged in`);
+         	return this;
+
+         }
+         logout(){
+         	console.log(`${this.name } has logged out`);
+         	return this;
+         }
+         
+         }
+         
+     class Moderator extends User {
+        	constructor(name,age,email,addCoins,removeCoins){
+        	 super(name,age,email);
+        	 
+      	}
+
+        addCoins(){
+        	this.addCoins++;
+        	console.log(` ${this.name} has added  ${this.lucoins} coins` );
+        	return this;
+        		
+
+        }
+        removeCoins(){
+        	this.removeCoins=0;
+        	console.log(`${this.name} has removed ${this.bitcoins} coins`);
+        	return this;
+       	}
+}
+     class Admin extends Moderator{
+     	constructor(name,age,email,addCoins,removeCoins,addCourse,deleteCourse){
+        	 super(name,age,email);
+
+}
+        addCourse(user,course){
+        	user.courses.push(course);
+        	console.log(user);
+        	
+        }
+        deleteCourse(user,course){
+        	user.courses.pop(course);
+        	console.log(user);
+        	
+        } 
+
+     }
+
+
+		let user1= new User('sam',34,'sam@gmail.com');
+		console.log(user1);
+		
+		user1.login();	
+		let users=['user','admin','moderator'];
+		
+		let moderator=new Moderator('John');
+		moderator.removeCoins();
+		const admin = new Admin ('Peter');
+		admin.addCourse(user1,"Java");
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>
+
+
+
+        	 
+
+             
+
+      
+        	
+
+
+        	
+
+        		
+        	
+
+
+        
