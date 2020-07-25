@@ -5,18 +5,25 @@
 	<body>
 	<script>
 	   
-	   for (var i=1; i=101; i++) {
-	   	if (i%3==0){
-	        console.log(`Here multiple is ${i}. Printing 'fizz' on multiple of 3.`);
-	   	}
-	    if (i%5==0){
-                console.log(`Here multiple is ${i}. Printing 'fizz' on multiple of 5.`);
-	     }
-         if (i%3==0 && i%5==0 ){
-	     	console.log(`Here multiple is ${i}. Printing 'fizz' on multiple of 3 and 5.`);
-	  }
-	}
-
+	    for(let i = 1; i <= 100; i++)
+{
+    if(((i % 3) == 0) && ((i % 5) == 0))
+    {
+        console.log(`The value of i is ${i} : fizzbuzz`);
+    }
+    else if((i % 3) == 0)
+    {
+        console.log(`The value of i is ${i} : fizz`);
+    }
+    else if((i % 5) == 0)
+    {
+        console.log(`The value of i is ${i} : buzz`);
+    }
+    else
+    {
+        console.log(`The value of i is ${i}`)
+    }
+}
   </script>
 </body>
 </html>
