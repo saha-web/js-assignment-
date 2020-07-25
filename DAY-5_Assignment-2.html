@@ -6,79 +6,109 @@
 
 	<body>
 	<script >
-     class User {
-			constructor(name,age,email){
+     class User
+{
+    constructor(name, age, email)
+    {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.coins = 0;
+        this.courses = [];
+    }
 
+    logIn()
+    {
+        console.log(`${this.name} have logged in.`);
+    }
 
-			this.name=name;
-			this.age=age;
-			this.email=email;
-			this.courses=[];
-
-		
+    logOut()
+    {
+        console.log(`${this.name} have logged out.`);
+    }
 }
-         login(){
-         	console.log(`${this.name} has logged in`);
-         	return this;
 
-         }
-         logout(){
-         	console.log(`${this.name } has logged out`);
-         	return this;
-         }
-         
-         }
-         
-     class Moderator extends User {
-        	constructor(name,age,email,addCoins,removeCoins){
-        	 super(name,age,email);
-        	 
-      	}
+class Moderator extends User
+{
+    constructor(name, age, email)
+    {
+        super(name, age, email);
+    }
 
-        addCoins(){
-        	this.addCoins++;
-        	console.log(` ${this.name} has added  ${this.lucoins} coins` );
-        	return this;
-        		
+    addCoins(user)
+    {
+        let coin = parseInt(prompt("Enter the coins to be added."));
 
+        if(coin > 0)
+        {
+            user.coins += coin;
         }
-        removeCoins(){
-        	this.removeCoins=0;
-        	console.log(`${this.name} has removed ${this.bitcoins} coins`);
-        	return this;
-       	}
-}
-     class Admin extends Moderator{
-     	constructor(name,age,email,addCoins,removeCoins,addCourse,deleteCourse){
-        	 super(name,age,email);
 
-}
-        addCourse(user,course){
-        	user.courses.push(course);
-        	console.log(user);
-        	
+        console.log(user);
+        return user;
+    }
+
+    removeCoins(user)
+    {
+        let coin = parseInt(prompt("Enter the coins to be removed."));
+
+        if(user.coins > 0)
+        {
+            user.coins -= coin;
+            if(user.coins < 0)
+            {
+                user.coins = 0;
+            }
         }
-        deleteCourse(user,course){
-        	user.courses.pop(course);
-        	console.log(user);
-        	
-        } 
 
-     }
+        console.log(user);
+        return user;
+    }
+}
+
+class Admin extends Moderator
+{
+    constructor(name, age, email)
+    {
+        super(name, age, email);
+    }
+
+    addCourses(user, course)
+    {
+        user.courses.push(course);
+
+        console.log(user);
+        return user;
+    }
+
+    removeCourse(user, course)
+    {
+        user.courses = user.courses.filter(element => element != course);
+
+        console.log(user);
+        return user;
+    }
+}
 
 
-		let user1= new User('sam',34,'sam@gmail.com');
-		console.log(user1);
-		
-		user1.login();	
-		let users=['user','admin','moderator'];
-		
-		let moderator=new Moderator('John');
-		moderator.removeCoins();
-		const admin = new Admin ('Peter');
-		admin.addCourse(user1,"Java");
-		
-		
+let user1 = new User("Illakiya", 20, "illakiya@gmail.com");
+user1.logIn();
+user1.logOut();
+
+
+let moderator1 = new Moderator("subasini", 22, "suba134@gmail.com");
+moderator1.logIn();
+user1 = moderator1.addCoins(user1);
+user1 = moderator1.removeCoins(user1);
+moderator1.logOut();
+
+
+let admin1 = new Admin("Deepa", 25, "deepa@gmail.com");
+admin1.logIn();
+user1 = admin1.addCourses(user1, "Python");
+user1 = admin1.addCourses(user1, "JavaScript");
+user1 = admin1.removeCourse(user1, "Python");
+admin1.logOut();
 		
 		
 		
